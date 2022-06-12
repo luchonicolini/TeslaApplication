@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
+        NavigationView {
         ZStack {
             ScrollView() {
                 VStack(spacing: 20) {
@@ -18,7 +19,11 @@ struct ContentView: View {
                     CustomDivider()
                     CategoryView(tilte: "Quick Shortcust", actionItems: index)
                     CustomDivider()
+                    CustomDivider()
                     CategoryView(tilte: "Recent Actions", actionItems: indexx)
+                    AllSetting()
+                    ReorderButton()
+                    
                 }
                 .padding()
             }
@@ -30,6 +35,9 @@ struct ContentView: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color("background"))
         .foregroundColor(.white)
+        .navigationTitle("Mach Five")
+        .navigationBarHidden(true)
+        }
     }
 }
 
@@ -84,10 +92,10 @@ struct HomeHeader: View {
             Spacer()
             HStack {
                 Button(action:  {}) {
-                GeneralButton(icon: "lock.fill")
+                    GeneralButton(icon: "lock.fill")
                 }
                 Button(action:  {}) {
-                GeneralButton(icon: "gear")
+                    GeneralButton(icon: "gear")
                 }
                 
             }
@@ -148,7 +156,7 @@ struct CarSection: View {
 struct CategoryHeader: View {
     var tilte: String
     var showEdit: Bool = false
-        
+    
     var body: some View {
         HStack {
             Text(tilte)
@@ -196,7 +204,7 @@ struct ActionButton: View {
                 .frame(width: 96)
                 .font(.system(size: 12, weight: .semibold,design: .default))
                 .multilineTextAlignment(.center)
-                
+            
             
         }
     }
@@ -221,6 +229,71 @@ let indexx: [ActionItem] = [
     ActionItem(iconName: "play.fill", text: "Medi")
 ]
 
-
-
 //42:50
+
+struct AllSetting: View {
+    var body: some View {
+        VStack {
+            CategoryHeader(tilte: "All Setting")
+            LazyVGrid(columns: [GridItem(.fixed(170)),GridItem(.fixed(170))]) {
+                SettingBlock(icon: "car.fill", tilte: "Controls", subtilte: "")
+                SettingBlock(icon: "fanblades.fill", tilte: "Climate", subtilte: "Interior 60* F*", backgroundColor: Color(.blue))
+                SettingBlock(icon: "location.fill", tilte: "Location", subtilte: "Empire State Building")
+                SettingBlock(icon: "checkerboard.shield", tilte: "Security", subtilte: "0 events detected")
+                SettingBlock(icon: "sparkle", tilte: "Upgrades", subtilte: "3 upgrades avaliable")
+            }
+        }
+    }
+}
+
+struct SettingBlock: View {
+    
+    var icon: String
+    var tilte: String
+    
+    var subtilte: String
+    var backgroundColor: Color = Color.white.opacity(0.05)
+    
+    var body: some View {
+        HStack(alignment: .center, spacing: 2) {
+            Image(systemName: icon)
+            VStack(alignment: .leading, spacing: 4) {
+                
+                Text(tilte)
+                    .fontWeight(.semibold)
+                    .font(.system(size: 14, weight: .medium, design:
+                            .default))
+                
+                
+                
+                Text(subtilte.uppercased())
+                    .font(.system(size: 8, weight: .medium, design:
+                            .default))
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .lineLimit(1)
+                
+            }
+            .padding(.leading,5)
+            Spacer()
+            Image(systemName: "chevron.right")
+        }
+        .padding(.horizontal,8)
+        .padding(.vertical,16)
+        .background(backgroundColor)
+        .clipShape(RoundedRectangle(cornerRadius: 16))
+        .overlay(RoundedRectangle(cornerRadius: 16).stroke(Color.white.opacity(0.1),lineWidth: 0.5))
+    }
+}
+
+struct ReorderButton: View {
+    var body: some View {
+        Button(action: {}) {
+            Text("Recorder Groups")
+                .font(.caption)
+                .padding(.vertical,8)
+                .padding(.horizontal,14)
+                .background(Color.white.opacity(0.05))
+                .clipShape(Capsule())
+        }
+    }
+}
