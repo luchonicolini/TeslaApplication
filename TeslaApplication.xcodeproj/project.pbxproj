@@ -13,6 +13,12 @@
 		194BCEA32853E63200482F22 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194BCE912853E62E00482F22 /* ContentView.swift */; };
 		194BCEA42853E63200482F22 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 194BCE922853E63100482F22 /* Assets.xcassets */; };
 		194BCEA52853E63200482F22 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 194BCE922853E63100482F22 /* Assets.xcassets */; };
+		195D46622856A33500F3BEB8 /* CarControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195D46612856A33500F3BEB8 /* CarControlView.swift */; };
+		195D46632856A33500F3BEB8 /* CarControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195D46612856A33500F3BEB8 /* CarControlView.swift */; };
+		1979C2C0285A43BB00D389DC /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1979C2BF285A43BB00D389DC /* Location.swift */; };
+		1979C2C1285A43BB00D389DC /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1979C2BF285A43BB00D389DC /* Location.swift */; };
+		1979C2C3285A697C00D389DC /* Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1979C2C2285A697C00D389DC /* Components.swift */; };
+		1979C2C4285A697C00D389DC /* Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1979C2C2285A697C00D389DC /* Components.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +28,9 @@
 		194BCE972853E63100482F22 /* TeslaApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TeslaApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		194BCE9D2853E63200482F22 /* TeslaApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TeslaApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		194BCE9F2853E63200482F22 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
+		195D46612856A33500F3BEB8 /* CarControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarControlView.swift; sourceTree = "<group>"; };
+		1979C2BF285A43BB00D389DC /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		1979C2C2285A697C00D389DC /* Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Components.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +54,7 @@
 		194BCE8A2853E62E00482F22 = {
 			isa = PBXGroup;
 			children = (
+				1979C2BE285A37DF00D389DC /* Views */,
 				194BCE8F2853E62E00482F22 /* Shared */,
 				194BCE9E2853E63200482F22 /* macOS */,
 				194BCE982853E63100482F22 /* Products */,
@@ -54,8 +64,8 @@
 		194BCE8F2853E62E00482F22 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				194BCE902853E62E00482F22 /* TeslaApplicationApp.swift */,
 				194BCE912853E62E00482F22 /* ContentView.swift */,
+				194BCE902853E62E00482F22 /* TeslaApplicationApp.swift */,
 				194BCE922853E63100482F22 /* Assets.xcassets */,
 			);
 			path = Shared;
@@ -76,6 +86,16 @@
 				194BCE9F2853E63200482F22 /* macOS.entitlements */,
 			);
 			path = macOS;
+			sourceTree = "<group>";
+		};
+		1979C2BE285A37DF00D389DC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				195D46612856A33500F3BEB8 /* CarControlView.swift */,
+				1979C2BF285A43BB00D389DC /* Location.swift */,
+				1979C2C2285A697C00D389DC /* Components.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -177,6 +197,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				194BCEA22853E63200482F22 /* ContentView.swift in Sources */,
+				195D46622856A33500F3BEB8 /* CarControlView.swift in Sources */,
+				1979C2C3285A697C00D389DC /* Components.swift in Sources */,
+				1979C2C0285A43BB00D389DC /* Location.swift in Sources */,
 				194BCEA02853E63200482F22 /* TeslaApplicationApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -186,6 +209,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				194BCEA32853E63200482F22 /* ContentView.swift in Sources */,
+				195D46632856A33500F3BEB8 /* CarControlView.swift in Sources */,
+				1979C2C4285A697C00D389DC /* Components.swift in Sources */,
+				1979C2C1285A43BB00D389DC /* Location.swift in Sources */,
 				194BCEA12853E63200482F22 /* TeslaApplicationApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

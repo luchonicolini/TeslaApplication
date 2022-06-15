@@ -104,6 +104,7 @@ struct HomeHeader: View {
     }
 }
 
+//Button
 struct GeneralButton: View {
     var icon: String
     
@@ -117,6 +118,7 @@ struct GeneralButton: View {
     }
 }
 
+//Divider
 struct CustomDivider: View {
     var body: some View {
         Rectangle()
@@ -210,7 +212,7 @@ struct ActionButton: View {
     }
 }
 
-//Model
+//ModelDate
 struct ActionItem: Hashable {
     var iconName: String
     var text: String
@@ -229,16 +231,22 @@ let indexx: [ActionItem] = [
     ActionItem(iconName: "play.fill", text: "Medi")
 ]
 
-//42:50
+//42:50 Setting
 
 struct AllSetting: View {
     var body: some View {
         VStack {
             CategoryHeader(tilte: "All Setting")
             LazyVGrid(columns: [GridItem(.fixed(170)),GridItem(.fixed(170))]) {
+                //NavigationLink
+                NavigationLink(destination: CarControlView()) {
                 SettingBlock(icon: "car.fill", tilte: "Controls", subtilte: "")
+                }
                 SettingBlock(icon: "fanblades.fill", tilte: "Climate", subtilte: "Interior 60* F*", backgroundColor: Color(.blue))
-                SettingBlock(icon: "location.fill", tilte: "Location", subtilte: "Empire State Building")
+                NavigationLink(destination: LocationView()) {
+                    SettingBlock(icon: "location.fill", tilte: "Location", subtilte: "Empire State Building")
+                }
+                
                 SettingBlock(icon: "checkerboard.shield", tilte: "Security", subtilte: "0 events detected")
                 SettingBlock(icon: "sparkle", tilte: "Upgrades", subtilte: "3 upgrades avaliable")
             }
@@ -246,6 +254,7 @@ struct AllSetting: View {
     }
 }
 
+//ConfigSetting
 struct SettingBlock: View {
     
     var icon: String
@@ -285,6 +294,7 @@ struct SettingBlock: View {
     }
 }
 
+//Button
 struct ReorderButton: View {
     var body: some View {
         Button(action: {}) {
